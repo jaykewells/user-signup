@@ -1,42 +1,43 @@
 {% extends "layout.html"%}
 {% block content %}
 <form action="/validate" method="post">
-Username:<input type="text" name="user" value = "{{user}}"/>
+<table>
+<tr>
+  <td>Username:</td><td><input type="text" name="user" value = "{{user}}"/></td><td>
     {% if usererror %}
 {{ usererror }}
     {% endif %}
-    {% if usererror2 %}
-{{ usererror2 }}
-    {% endif %}
+  </td>
+</tr>
 
-<br>
-Email:<input type="text" name="email" value = "{{email}}"/>
-{% if emailerror %}
+<tr>
+  <td>Email:</td><td><input type="text" name="email" value = "{{email}}"/></td>
+  <td>
+    {% if emailerror %}
         {{ emailerror }}
         {% endif %}
-{% if emailerror2 %}
-        {{ emailerror2 }}
-        {% endif %}
-{% if emailerror3 %}
-        {{ emailerror3 }}
-        {% endif %}
-
-<br>
-Password:<input type="password" name="password"/>
+      </td>
+</tr>
+<tr>
+<td>Password:</td><td><input type="password" name="password"/></td><td>
 {% if passerror %}
     {{ passerror }}
     {% endif %}
-{%if passerror2 %}
-    {{ passerror2 }}
-    {% endif %}
-
-<br>
-Verify Password:<input type="password" name="vpass"/>
+</td>
+</tr>
+<tr>
+<td>Verify Password:</td><td><input type="password" name="vpass"/></td>
+<td>
 {% if vpasserror %}
     {{ vpasserror }}
     {% endif %}
-
+</td>
+</tr>
+<tr>
+<td></td><td>
 <input type="submit" value="Submit"/>
+</td>
+</table>
 
 </form>
 {% endblock %}
