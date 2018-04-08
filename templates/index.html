@@ -1,0 +1,42 @@
+{% extends "layout.html"%}
+{% block content %}
+<form action="/validate" method="post">
+Username:<input type="text" name="user" value = "{{user}}"/>
+    {% if usererror %}
+{{ usererror }}
+    {% endif %}
+    {% if usererror2 %}
+{{ usererror2 }}
+    {% endif %}
+
+<br>
+Email:<input type="text" name="email" value = "{{email}}"/>
+{% if emailerror %}
+        {{ emailerror }}
+        {% endif %}
+{% if emailerror2 %}
+        {{ emailerror2 }}
+        {% endif %}
+{% if emailerror3 %}
+        {{ emailerror3 }}
+        {% endif %}
+
+<br>
+Password:<input type="password" name="password"/>
+{% if passerror %}
+    {{ passerror }}
+    {% endif %}
+{%if passerror2 %}
+    {{ passerror2 }}
+    {% endif %}
+
+<br>
+Verify Password:<input type="password" name="vpass"/>
+{% if vpasserror %}
+    {{ vpasserror }}
+    {% endif %}
+
+<input type="submit" value="Submit"/>
+
+</form>
+{% endblock %}
